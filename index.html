@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Ljuzov CV</title>
+    <link rel="icon" href="portraitphotoicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+    </div>
+    <div class="topSide">
+    </div>
+    <div class="lightModeDark">
+        <button id="darkModeToggle" class="darkModeToggle">
+            <i class='bx bx-moon bx-flashing-hover' alt="Dark Mode"></i>
+        </button>
+        <button id="lightModeToggle" class="lightModeToggle">
+            <i class='bx bxs-sun bx-flashing-hover' alt="Light Mode"></i>
+        </button>
+    </div>
+    <div class="title-name">
+        <h1 class="f-l-name">Jane Ljuzov</h1>
+        <h3 class="job-description">Student at International Slavic University - Software Technologies</h3>
+    </div>
+    <div class="pic-n-menu">
+        <div class="portrait-picture">
+            <img src="portraitphotosq.jpg" alt="Profile Photo" class="portrait-picture">
+        </div>
+        <div class="menubar">
+            <ul class="menucontents">
+                <li id="mclaboutme" class="mclist active">
+                    <a href="#">
+                        <span class="mclisttext">About Me</span>
+                    </a>
+                </li>
+                <li class="mclist">
+                    <a href="#education">
+                        <span class="mclisttext">Education</span>
+                    </a>
+                </li>
+                <li class="mclist">
+                    <a href="#experience">
+                        <span class="mclisttext">Experience</span>
+                    </a>
+                </li>
+                <li class="mclist">
+                    <a href="#skills">
+                        <span class="mclisttext">Skills</span>
+                    </a>
+                </li>
+                <li class="mclist">
+                    <a href="#contact">
+                        <span class="mclisttext">Contact</span>
+                    </a>
+                </li>
+                <div class="mclindicator"></div>
+            </ul>
+        </div>
+    </div>
+    <div class="contents">
+        <section id="aboutme" class="aboutme">
+            <h1 class="aboutmetitle">About Me</h1>
+            <p class="aboutmecontents">Hi, I'm Jane Ljuzov, a 24-year-old Computer Science graduate at International Slavic University, 
+                currently finishing my Master's degree. 
+                I recently completed an internship at Joyson Safety Systems, 
+                gaining valuable IT experience. 
+                I'm a quick learner and aspiring to work in software, app, web, or game development. 
+                I consider myself a perfectionist, paying meticulous attention to details. 
+                While I'm particularly passionate about the gaming industry and would be eager to work in some game development company, should the opportunity arises.
+                I'm also eager to start my working journey in any of the software, app and web development companies.
+            </p>
+        </section>
+        <section id="education" class="education">
+            <h2 class="educationtitle">Education</h2>
+            <h3 class="universityname">International Slavic University</h3>
+            <p class="universitydegree">Bachelor of Computer Sciense, Software Technologies | GPA - 8.03</p>
+            <p class="universityyears">Oct/2018 - Sep/2022</p>
+            <p class="universitydegree">Master of Computer Sciense - Legum Magister LL.M, Software Technologies | GPA - TBA</p>
+            <p class="universityyears">Oct/2022 - Present</p>
+        </section>
+        <section id="experience" class="experience">
+            <h2 class="experiencetitle">Experience</h2>
+            <h3 class="jobtitle">IT Intern | Joyson Safety Systems - Macedonia</h3>
+            <p class="jobyears">Oct/2023 - Nov/2023</p>
+        </section>
+        <section id="skills" class="skills">
+            <h2 class="skillstitle">Skills</h2>
+            <div class="theskills">
+                <ul class="theskillsul">
+                    <li>Python</li>
+                    <li>C#</li>
+                    <li>C++</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Unity</li>
+                    <li>Graphic Design</li>
+                    <li>mySQL</li>
+                    <li>OOP, Data Stuctures and Algorithms</li>
+                </ul>
+            </div>
+            <h3 class="languagestitle">Languages</h3>
+            <p class="languages">Macedonian (Native/Bilingual Proficiency)</p>
+            <p class="languages">English (Full Professional Proficiency)</p>
+        </section>
+        <section id="contact" class="contact">
+            <h2 class="contactstitle">Contact</h2>
+            <div class="contactcity">
+                <i class='bx bx-home-alt bx-flashing-hover'></i>
+                <p class ="cityname">Kicevo</p></p>
+            </div>
+            <div class="contactphone">
+                <i class='bx bx-mobile-alt bx-flashing-hover'></i>
+                <p class ="phonenumber">072-604-482</p>
+            </div>
+            <div class="contactmail">
+                <i class='bx bxl-gmail bx-flashing-hover'></i>
+                <p class="mymail">janeljuzov@gmail.com</p>
+            </div>
+            <h3 class="socialstitle">Socials</h3>
+            <div class="socialswrapper">
+                <div class="socialsbutton" onclick="openLink('https://www.facebook.com/jane.ljuzov')">
+                    <div class="socialsicon">
+                        <i class='bx bxl-facebook bx-flashing-hover'></i>
+                    </div>
+                    <span class="socialname">Facebook</span>
+                </div>
+                <div class="socialsbutton" onclick="openLink('https://www.instagram.com/mr.ljuzov/')">
+                    <div class="socialsicon">
+                        <i class='bx bxl-instagram bx-flashing-hover' ></i>
+                    </div>
+                    <span class="socialname">Instagram</span>
+                </div>
+                <div class="socialsbutton" onclick="openLink('https://www.linkedin.com/in/jane-ljuzov/')">
+                    <div class="socialsicon">
+                        <i class='bx bxl-linkedin-square bx-flashing-hover' ></i>
+                    </div>
+                    <span class="socialname">LinkedIn</span>
+                </div>
+                <div class="socialsbutton" onclick="openLink('https://github.com/mrLjuzov')">
+                    <div class="socialsicon">
+                        <i class='bx bxl-github bx-flashing-hover' ></i>
+                    </div>
+                    <span class="socialname">Git Hub</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

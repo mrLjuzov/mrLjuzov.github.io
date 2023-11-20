@@ -1,0 +1,421 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.background, .leftSide, .rightSide {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.background {
+    background: white;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.topSide {
+    height: 25vh;
+    width: 100%;
+    position: absolute;
+    background: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-bottom-left-radius: 2vh;
+}
+
+.lightModeDark {
+    width: 4vw;
+    height: 8vh;
+    position: fixed;
+    z-index: 1;
+    top: 91vh;
+    left: 5vw;
+    transform: translate(-2vw, -5vh);
+}
+
+.lightModeDark i {
+    font-size: 4vh;
+}
+
+.lightModeDark:hover {
+    border-radius: 50%;
+    box-shadow: 0px 2vh 2vh rgba(0, 0, 0, 0.1); /* Use vmin for box-shadow */
+    transition: all 0.3s ease-out;
+    border: 1vh solid transparent;
+}
+
+.darkModeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightModeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.switchModeActive {
+    display: flex !important;
+}
+
+.pic-n-menu {
+    height: 53vh;
+    width: 20vw;
+    position: fixed;
+    z-index: 1;
+    bottom: 35vh;
+    left: 4vw;
+    transform: translateX(11vw);
+}
+
+.portrait-picture {
+    max-width: 25vw;
+    max-height: 25vh; 
+    display: flex;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+img.portrait-picture {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.menubar {
+    width: 20vw;
+    height: 100%;
+}
+
+.menucontents {
+    width: auto;
+    height: 29vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 6vh 10vh;
+    list-style: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 2vh;
+    justify-content: center;
+}
+
+.mclist.active {
+    transition: 0.5s;
+    transform: translateX(-4vw);
+    z-index: 1;
+}
+
+.mclist {
+    margin-bottom: 2vh;
+    font-size: 2vh;
+}
+
+#mclaboutme.mclist {
+    margin-top: 2vh;
+}
+
+.mclisttext {
+    display: contents;
+    position: absolute;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .7);
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0;
+    }
+  }
+
+.mclist:hover {
+    animation: flash 3s infinite;
+    animation-play-state: running;
+    opacity: .7;
+}
+
+.mclindicator {
+    position: absolute;
+    top: 63.3%;
+    right: 50%;
+    width: 8vw;
+    height: 4vh;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 15px 30px -24px inset, rgba(0, 0, 0, 0.3) 0px 9px 18px -36px inset;
+    border-radius: 0;
+    border-top-left-radius: 10vh;
+    border-bottom-left-radius: 10vh;
+    border-top-right-radius: 10vh;
+    border-bottom-right-radius: 10vh;
+    border: 0.4vh solid rgb(255, 255, 255);
+    transition: 0.5s;
+}
+
+.mclindicator::before {
+    content: '';
+    top: -38%;
+    left: 45%;
+    width: 0.5vw;
+    height: 0.9vh;
+    background: rgb(255, 255, 255);
+    border-bottom-left-radius: 0.4vh;
+    box-shadow: -5px 0px 0px 0px rgb(255, 255, 255);
+}
+
+.mcldarkmode, .mclindicator::before {
+    content: '';
+    top: -38%;
+    left: 45%;
+    width: 0.5vw;
+    height: 0.9vh;
+    background: rgb(24, 61, 61);
+    border-bottom-left-radius: 0.4vh;
+    box-shadow: -5px 0px 0px 0px rgb(92, 131, 116);
+}
+
+.mclindicator::after {
+    content: '';
+    top: 111%;
+    left: 45%;
+    width: 0.5vw;
+    height: 0.9vh;
+    background: rgb(255, 255, 255);
+    border-top-left-radius: 0.4vh;
+    box-shadow: -5px 0px 0px 0px rgb(255, 255, 255);
+}
+
+.mcldarkmode, .mclindicator::after {
+    content: '';
+    top: -38%;
+    left: 45%;
+    width: 0.5vw;
+    height: 0.9vh;
+    background: rgb(24, 61, 61);
+    border-bottom-left-radius: 0.4vh;
+    box-shadow: -5px 0px 0px 0px rgb(92, 131, 116);
+}
+
+.mclist:nth-child(1).active ~ .mclindicator {
+    transform: translateY(calc(27.2vh * 0));
+}
+
+.mclist:nth-child(2).active ~ .mclindicator {
+    transform: translateY(calc(27.2vh * 0.183));
+}
+
+.mclist:nth-child(3).active ~ .mclindicator {
+    transform: translateY(calc(27.2vh * 0.365));
+}
+
+.mclist:nth-child(4).active ~ .mclindicator {
+    transform: translateY(calc(27.2vh * 0.552));
+}
+
+.mclist:nth-child(5).active ~ .mclindicator {
+    transform: translateY(calc(27.2vh * 0.737));
+}
+
+
+.title-name {
+    display: block;
+    flex-direction: column;
+    font-size: 2vh;
+    position: absolute;
+    z-index: 2;
+    bottom: 70vh;
+    left: 54vw;
+    transform: translateX(-16vw);
+}
+
+.f-l-name {
+    font-weight: 600;
+    color: rgba(0, 0, 0, .7);
+    margin-bottom: 2.5vh;
+}
+
+.job-description {
+    font-weight: 300;
+    color: rgba(0, 0, 0, .7);
+    margin-top: 1vh;
+}
+
+.contents {
+    display: flex;
+    width: -webkit-fill-available;
+    background: white;
+    color: rgba(0, 0, 0, .7);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-top-left-radius: 2vh;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    margin-left: 35vw;
+    margin-top: 25vh;
+    padding: 5vh
+}
+
+.aboutme {
+    margin-bottom: 4vh;
+    font-size: 2vh;
+    padding-top: 5vh;
+    text-align: justify;
+}
+
+.aboutmetitle, .educationtitle, .experiencetitle, .skillstitle, .contactstitle {
+    display: flex;
+    justify-content: center;
+}
+
+.aboutmecontents, .universityname, .jobtitle, .skills, .languagestitle, .contactcity, .theskills {
+    margin-top: 2vh;
+}
+
+.socialstitle {
+    margin-top: 4vh;
+}
+
+.contactcity, .contactphone, .contactmail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cityname, .phonenumber, .mymail {
+    padding-left: 0.4vh;
+}
+
+.contactmail {
+    margin-bottom: 2vh;
+}
+
+.education, .experience, .skills, .contact {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    font-size: 2vh;
+    padding-top: 5vh;
+    
+}
+
+.theskills {
+    margin-bottom: 4vh;
+}
+
+.theskillsul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 1vh;   
+}
+
+.socialswrapper {
+    display: flex;
+}
+
+.socialsbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 3em;
+    width: 3em;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 2vh 2vh rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+}
+
+.socialsbutton:hover {
+    width: auto;
+    border-radius: 0;
+    border-top-left-radius: 10vh;
+    border-bottom-left-radius: 10vh;
+    border-top-right-radius: 10vh;
+    border-bottom-right-radius: 10vh;
+    border: 1vh solid transparent;
+}
+
+.socialsicon {
+    display: contents;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    line-height: 6vh; 
+    transition: all 0.3s ease-out;
+    font-size: 3vh;
+}
+
+.socialsicon {
+    display: block;
+}
+
+.socialsicon i {
+    padding-top: 2vh;
+    padding-right: 0.2vw;
+    height: 2vh;
+    width: 2vw;
+
+}
+
+.socialname {
+    display: none;
+}
+
+.socialsbutton:hover .socialsicon {
+    display: none; 
+}
+
+.socialsbutton:hover .socialname {
+    display: block;
+    animation: flash 3s infinite;
+    animation-play-state: running;
+    opacity: .7;
+}
+
+.languagestitle {
+    margin-bottom: 2vh;
+}
+
+
+
