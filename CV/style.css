@@ -98,7 +98,8 @@ body {
 /*---------------------------Light/Dark Mode Start---------------------------*/
 /*----------Picture and Menu Start----------*/
 .pic-n-menu {
-    height: 53vh;
+    height: 100%;
+    top: 12%;
     width: 20vw;
     position: fixed;
     z-index: 1;
@@ -121,27 +122,48 @@ img.portrait-picture {
 /*----------Picture and Menu End----------*/
 /*---------------------------Menubar Start---------------------------*/
 .menubar {
-    width: 20vw;
-    height: 100%;
+    width: 100%;
+    height: 27%;
+    margin-top: 6vh;
+    padding: 0 5vw 0 5vw;
 }
 
 .menucontents {
     width: auto;
-    height: 29vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-    margin: 6vh 10vh;
     list-style: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 2vh;
     justify-content: center;
 }
 
-.mclist.active {
+#mclaboutme.mclist.active {
     transition: 0.5s;
-    transform: translateX(-4vw);
+    transform: translateX(-3.8vw);
+    z-index: 1;
+}
+#mcleducation.mclist.active {
+    transition: 0.5s;
+    transform: translateX(-3.9vw);
+    z-index: 1;
+}
+#mclexperience.mclist.active {
+    transition: 0.5s;
+    transform: translateX(-4.15vw);
+    z-index: 1;
+}
+#mclskills.mclist.active {
+    transition: 0.5s;
+    transform: translateX(-2.7vw);
+    z-index: 1;
+}
+#mclcontact.mclist.active {
+    transition: 0.5s;
+    transform: translateX(-3.5vw);
     z-index: 1;
 }
 
@@ -178,8 +200,8 @@ img.portrait-picture {
 
 .mclindicator {
     position: absolute;
-    top: 63.3%;
-    right: 50%;
+    top: 32.5%;
+    right: 51%;
     width: 8vw;
     height: 4vh;
     background: rgb(255, 255, 255);
@@ -238,23 +260,23 @@ img.portrait-picture {
 }
 
 .mclist:nth-child(1).active ~ .mclindicator {
-    transform: translateY(calc(27.2vh * 0));
+    transform: translateY(calc(var(--topmclindicator) * 0.005));
 }
 
 .mclist:nth-child(2).active ~ .mclindicator {
-    transform: translateY(calc(27.2vh * 0.183));
+    transform: translateY(calc(var(--topmclindicator) * 0.375));
 }
 
 .mclist:nth-child(3).active ~ .mclindicator {
-    transform: translateY(calc(27.2vh * 0.365));
+    transform: translateY(calc(var(--topmclindicator) * 0.745));
 }
 
 .mclist:nth-child(4).active ~ .mclindicator {
-    transform: translateY(calc(27.2vh * 0.552));
+    transform: translateY(calc(var(--topmclindicator) * 1.11));
 }
 
 .mclist:nth-child(5).active ~ .mclindicator {
-    transform: translateY(calc(27.2vh * 0.737));
+    transform: translateY(calc(var(--topmclindicator) * 1.485));
 }
 /*---------------------------Menubar End---------------------------*/
 /*----------Head Title Start----------*/
