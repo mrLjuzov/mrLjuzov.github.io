@@ -40,11 +40,12 @@ body {
 /*----------Top Side End----------*/
 /*----------Light/Dark Mode Start----------*/
 .lightModeDark {
-    width: 4vw;
-    height: 8vh;
+    width: 4vh;
+    height: 4vh;
     position: fixed;
+    border-radius: 100%;
     z-index: 1;
-    top: 91vh;
+    top: 94vh;
     left: 5vw;
     transform: translate(-2vw, -5vh);
 }
