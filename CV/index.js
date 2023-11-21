@@ -6,73 +6,124 @@ const contentsElement = document.querySelector(".contents");
 const menuContentsElements = document.querySelector(".menucontents");
 const mclisttextElement = document.querySelectorAll(".mclisttext");
 const backgroundElement = document.querySelector(".background");
+const modeLDlement = document.querySelector(".lightModeDark");
 const nameFLElement = document.querySelector(".f-l-name");
 const jobDescriptionElement = document.querySelector(".job-description");
 const mclist = document.querySelectorAll('.mclist');
 const mclIndicatorElement = document.querySelector(".mclindicator");
 
+// The Event Listeners
+uiBtnDarkMode.addEventListener("click", switchToDarkMode);
+uiBtnLightMode.addEventListener("click", switchToLightMode);
+mclist.forEach((item) => item.addEventListener('click', activeLink));
 
+// The Dark Mode Switch
 function switchToDarkMode() {
     uiBtnDarkMode.style.display = 'none';
-    lightModeToggle.classList.add('switchModeActive');
+    uiBtnLightMode.classList.add('switchModeActive');
     document.body.classList.add('mcldarkmode');
-    switchDark();
+    switchTheme(darkTheme);
 }
 
+// The Light Mode Switch
 function switchToLightMode() {
-    lightModeToggle.classList.remove('switchModeActive');
-    darkModeToggle.style.removeProperty('display');
+    uiBtnLightMode.classList.remove('switchModeActive');
+    uiBtnDarkMode.style.removeProperty('display');
     document.body.classList.remove('mcldarkmode');
-    switchLight();
+    switchTheme(lightTheme);
 }
 
+// The Active Section in the Menubar
 function activeLink() {
-    mclist.forEach((item) =>
-    item.classList.remove('active'))
+    mclist.forEach((item) => item.classList.remove('active'));
     this.classList.add('active');
 }
-mclist.forEach((item) =>
-item.addEventListener('click', activeLink));
 
-
+// Open Socials on click function
 function openLink(url) {
     window.open(url, '_blank');
 }
 
-function switchDark() {
-    topSideElement.style.background = 'rgba(4, 13, 18, .7)';
-    // topSideElement.style.boxShadow = 'rgba(0, 0, 0, 0.25) 0px 30px 60px -12px inset, rgba(255, 255, 255, 0.3) 0px 18px 36px -18px inset';
-    // portraitShadowElement.style.boxShadow = 'rgba(238, 243, 209, 0.15) 0px 48px 100px 0px';
-    contentsElement.style.background = 'rgb(24, 61, 61)';
-    contentsElement.style.color = 'rgba(255, 255, 255, .7)';
-    // contentsElement.style.boxShadow = 'rgba(255, 255, 255, 0.16) 0px 1px 4px';
-    backgroundElement.style.background = 'rgb(92, 131, 116)';
-    menuContentsElements.style.background = 'rgb(24, 61, 61)';
-    mclisttextElement.forEach(element => {element.style.color = 'rgba(255, 255, 255, .7)';});
-    // menuContentsElements.style.boxShadow = 'rgba(255, 255, 255, 0.16) 0px 1px 4px';
-    nameFLElement.style.color = 'rgba(255, 255, 255, .7)';
-    jobDescriptionElement.style.color = 'rgba(255, 255, 255, .7)';
-    mclIndicatorElement.style.background = 'rgb(24, 61, 61)';
-    mclIndicatorElement.style.boxShadow = 'rgb(92, 131, 116)';
-    mclIndicatorElement.style.border = '0.4vh solid rgb(92, 131, 116)';
-}
-function switchLight() {
-    topSideElement.style.background = 'white';
-    // topSideElement.style.boxShadow = 'rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset';
-    // portraitShadowElement.style.boxShadow = 'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px';
-    contentsElement.style.background = 'white';
-    contentsElement.style.color = 'rgba(0, 0, 0, .7)';
-    // contentsElement.style.boxShadow = 'rgba(0, 0, 0, 0.16) 0px 1px 4px';
-    backgroundElement.style.background = 'white';
-    menuContentsElements.style.background = 'white';
-    mclisttextElement.forEach(element => {element.style.color = 'rgba(0, 0, 0, .7)';});
-    // menuContentsElements.style.boxShadow = 'rgba(0, 0, 0, 0.16) 0px 1px 4px';
-    nameFLElement.style.color = 'rgba(0, 0, 0, .7)';
-    jobDescriptionElement.style.color = 'rgba(0, 0, 0, .7)';
-    mclIndicatorElement.style.background = 'white';
-    mclIndicatorElement.style.boxShadow = 'rgba(50, 50, 93, 0.25) 0px 15px 30px -24px inset, rgba(0, 0, 0, 0.3) 0px 9px 18px -36px inset;';
-    mclIndicatorElement.style.border = '0.4vh solid rgb(255, 255, 255)';
+// Theme Switching
+function switchTheme(theme) {
+    topSideElement.style.background = theme.topSideBackground;
+    contentsElement.style.background = theme.contentsBackground;
+    contentsElement.style.color = theme.contentsColor;
+    backgroundElement.style.background = theme.background;
+    menuContentsElements.style.background = theme.menuContentsBackground;
+    mclisttextElement.forEach(element => element.style.color = theme.menuContentsTextColor);
+    nameFLElement.style.color = theme.nameColor;
+    jobDescriptionElement.style.color = theme.jobDescriptionColor;
+    mclIndicatorElement.style.background = theme.indicatorBackground;
+    mclIndicatorElement.style.boxShadow = theme.indicatorBoxShadow;
+    mclIndicatorElement.style.border = theme.indicatorBorder;
+    modeLDlement.style.color = theme.modeLDColor;
 }
 
-uiBtnDarkMode.addEventListener("click", switchToDarkMode);
-uiBtnLightMode.addEventListener("click", switchToLightMode);
+// For all Text Color on Dark theme
+const commonTextColorDark = 'rgba(255, 255, 255, .7)'; //Modify only this if you want
+const textColorDark = {
+    contentsColor: commonTextColorDark,
+    menuContentsTextColor: commonTextColorDark,
+    nameColor: commonTextColorDark,
+    jobDescriptionColor: commonTextColorDark,
+    modeLDColor: commonTextColorDark
+}
+
+// For all contents with the Background Color on Dark theme
+const commonBackgroundColorDark = 'rgb(92, 131, 116)'; //Modify only this if you want
+const backgroundColorDark = {
+    background: commonBackgroundColorDark,
+    indicatorBoxShadow: commonBackgroundColorDark,
+    indicatorBorder: '0.4vh solid ' + commonBackgroundColorDark
+}
+
+// For all with the Content Background Color on Dark theme
+const commonBackgroundContentsColorDark = 'rgb(24, 61, 61)'; //Modify only this if you want
+const backgroundContentsColorDark = {
+    contentsBackground: commonBackgroundContentsColorDark,
+    menuContentsBackground: commonBackgroundContentsColorDark,
+    indicatorBackground: commonBackgroundContentsColorDark
+}
+
+// Dark Theme Styling
+const darkTheme = {
+    topSideBackground: 'rgba(4, 13, 18, .7)', //Modify only this if you want
+    ...textColorDark,
+    ...backgroundColorDark,
+    ...backgroundContentsColorDark
+};
+
+// For all Text Color on Light theme
+const commonTextColorLight = 'rgba(0, 0, 0, .7)'; //Modify only this if you want
+const textColorLight = {
+    contentsColor: commonTextColorLight,
+    menuContentsTextColor: commonTextColorLight,
+    nameColor: commonTextColorLight,
+    jobDescriptionColor: commonTextColorLight,
+    modeLDColor: commonTextColorLight
+}
+
+// For all contents with the Background Color on Light theme
+const commonBackgroundColorLight = 'rgb(255, 255, 255)'; //Modify only this if you want
+const backgroundColorLight = {
+    background: commonBackgroundColorLight,
+    indicatorBorder: '0.4vh solid ' + commonBackgroundColorLight
+}
+
+// For all with the Content Background Color on Light theme
+const commonBackgroundContentsColorLight = 'rgb(255, 255, 255)'; //Modify only this if you want
+const backgroundContentsColorLight = {
+    contentsBackground: commonBackgroundContentsColorLight,
+    menuContentsBackground: commonBackgroundContentsColorLight,
+    indicatorBackground: commonBackgroundContentsColorLight
+}
+
+// Light Theme Styling
+const lightTheme = {
+    topSideBackground: 'rgb(255, 255, 255)', //Modify only this if you want
+    ...textColorLight,
+    ...backgroundColorLight,
+    ...backgroundContentsColorLight,
+    indicatorBoxShadow: 'rgba(50, 50, 93, 0.25) 0px 15px 30px -24px inset, rgba(0, 0, 0, 0.3) 0px 9px 18px -36px inset;', //Modify only the rgba elements if you want
+};
