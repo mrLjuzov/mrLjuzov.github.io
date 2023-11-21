@@ -15,6 +15,7 @@ body {
     margin: 0;
 }
 
+/*----------Background Start----------*/
 .background, .leftSide, .rightSide {
     width: 100%;
     height: 100vh;
@@ -26,7 +27,8 @@ body {
     position: fixed;
     overflow-y: auto;
 }
-
+/*----------Background End----------*/
+/*----------Top Side Start----------*/
 .topSide {
     height: 25vh;
     width: 100%;
@@ -35,7 +37,8 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     border-bottom-left-radius: 2vh;
 }
-
+/*----------Top Side End----------*/
+/*----------Light/Dark Mode Start----------*/
 .lightModeDark {
     width: 4vw;
     height: 8vh;
@@ -92,7 +95,8 @@ body {
 .switchModeActive {
     display: flex !important;
 }
-
+/*---------------------------Light/Dark Mode Start---------------------------*/
+/*----------Picture and Menu Start----------*/
 .pic-n-menu {
     height: 53vh;
     width: 20vw;
@@ -114,7 +118,8 @@ body {
 img.portrait-picture {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
-
+/*----------Picture and Menu End----------*/
+/*---------------------------Menubar Start---------------------------*/
 .menubar {
     width: 20vw;
     height: 100%;
@@ -251,8 +256,8 @@ img.portrait-picture {
 .mclist:nth-child(5).active ~ .mclindicator {
     transform: translateY(calc(27.2vh * 0.737));
 }
-
-
+/*---------------------------Menubar End---------------------------*/
+/*----------Head Title Start----------*/
 .title-name {
     display: block;
     flex-direction: column;
@@ -275,7 +280,8 @@ img.portrait-picture {
     color: rgba(0, 0, 0, .7);
     margin-top: 1vh;
 }
-
+/*----------Head Title End----------*/
+/*----------Contents Start----------*/
 .contents {
     display: flex;
     width: -webkit-fill-available;
@@ -298,12 +304,22 @@ img.portrait-picture {
     text-align: justify;
 }
 
-.aboutmetitle, .educationtitle, .experiencetitle, .skillstitle, .contactstitle {
+.aboutmetitle, 
+.educationtitle, 
+.experiencetitle, 
+.skillstitle, 
+.contactstitle {
     display: flex;
     justify-content: center;
 }
 
-.aboutmecontents, .universityname, .jobtitle, .skills, .languagestitle, .contactcity, .theskills {
+.aboutmecontents, 
+.universityname, 
+.jobtitle, 
+.skills, 
+.languagestitle, 
+.contactcity, 
+.theskills {
     margin-top: 2vh;
 }
 
@@ -311,13 +327,17 @@ img.portrait-picture {
     margin-top: 4vh;
 }
 
-.contactcity, .contactphone, .contactmail {
+.contactcity, 
+.contactphone, 
+.contactmail {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.cityname, .phonenumber, .mymail {
+.cityname, 
+.phonenumber, 
+.mymail {
     padding-left: 0.4vh;
 }
 
@@ -325,7 +345,10 @@ img.portrait-picture {
     margin-bottom: 2vh;
 }
 
-.education, .experience, .skills, .contact {
+.education, 
+.experience, 
+.skills, 
+.contact {
     margin-top: 4vh;
     margin-bottom: 4vh;
     font-size: 2vh;
@@ -345,6 +368,11 @@ img.portrait-picture {
     margin-bottom: 1vh;   
 }
 
+.languagestitle {
+    margin-bottom: 2vh;
+}
+/*----------Contents End----------*/
+/*---------------------------Socials Buttons Start---------------------------*/
 .socialswrapper {
     display: flex;
 }
@@ -414,10 +442,4 @@ img.portrait-picture {
     animation-play-state: running;
     opacity: .7;
 }
-
-.languagestitle {
-    margin-bottom: 2vh;
-}
-
-
-
+/*---------------------------Socials Buttons End---------------------------*/
