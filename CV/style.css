@@ -251,11 +251,11 @@ img.portrait-picture {
 }
 
 .mclist:nth-child(1).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * -0.0316)) translateX(-50%);
+    transform: translateY(calc(var(--topmclindicator) * -0.0326)) translateX(-50%);
 }
 
 .mclist:nth-child(2).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * -0.0157)) translateX(-50%);
+    transform: translateY(calc(var(--topmclindicator) * -0.0161)) translateX(-50%);
 }
 
 .mclist:nth-child(3).active ~ .mclindicator {
@@ -263,11 +263,11 @@ img.portrait-picture {
 }
 
 .mclist:nth-child(4).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * 0.0157)) translateX(-50%);
+    transform: translateY(calc(var(--topmclindicator) * 0.0161)) translateX(-50%);
 }
 
 .mclist:nth-child(5).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * 0.0316)) translateX(-50%);
+    transform: translateY(calc(var(--topmclindicator) * 0.0326)) translateX(-50%);
 }
 /*---------------------------Menubar End---------------------------*/
 /*----------Head Title Start----------*/
