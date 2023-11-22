@@ -11,13 +11,11 @@ const nameFLElement = document.querySelector(".f-l-name");
 const jobDescriptionElement = document.querySelector(".job-description");
 const mclist = document.querySelectorAll('.mclist');
 const mclIndicatorElement = document.querySelector(".mclindicator");
-const mclindicatorTopElement = document.querySelector('.mclindicator').getBoundingClientRect().top;
 
 
 uiBtnDarkMode.addEventListener("click", switchToDarkMode);
 uiBtnLightMode.addEventListener("click", switchToLightMode);
 mclist.forEach((item) => item.addEventListener('click', activeLink));
-document.documentElement.style.setProperty('--topmclindicator', mclindicatorTopElement + 'vh');
 
 
 // The Dark Mode Switch
