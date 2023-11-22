@@ -17,7 +17,7 @@ const mclindicatorTopElement = document.querySelector('.mclindicator').getBoundi
 uiBtnDarkMode.addEventListener("click", switchToDarkMode);
 uiBtnLightMode.addEventListener("click", switchToLightMode);
 mclist.forEach((item) => item.addEventListener('click', activeLink));
-document.documentElement.style.setProperty('--topmclindicator', mclindicatorTopElement + '%');
+document.documentElement.style.setProperty('--topmclindicator', mclindicatorTopElement + 'vh');
 
 
 // The Dark Mode Switch

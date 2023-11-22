@@ -45,7 +45,7 @@ body {
     position: fixed;
     border-radius: 100%;
     z-index: 1;
-    top: 94vh;
+    top: 95vh;
     left: 5vw;
     transform: translate(-2vw, -5vh);
 }
@@ -99,13 +99,10 @@ body {
 /*---------------------------Light/Dark Mode Start---------------------------*/
 /*----------Picture and Menu Start----------*/
 .pic-n-menu {
-    height: 100%;
     top: 12%;
-    width: 20vw;
+    width: 17vw;
     position: fixed;
     z-index: 1;
-    bottom: 35vh;
-    left: 4vw;
     transform: translateX(11vw);
 }
 
@@ -123,10 +120,11 @@ img.portrait-picture {
 /*----------Picture and Menu End----------*/
 /*---------------------------Menubar Start---------------------------*/
 .menubar {
-    width: 100%;
+    min-width: min-content;
+    max-width: 17vw;
     height: 27%;
     margin-top: 6vh;
-    padding: 0 5vw 0 5vw;
+    padding: 0 4vw;
 }
 
 .menucontents {
@@ -140,41 +138,35 @@ img.portrait-picture {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 2vh;
     justify-content: center;
+    align-items: center;
+}
+
+.mclist.active {
+    transition: 0.5s;
+    z-index: 1;
 }
 
 #mclaboutme.mclist.active {
-    transition: 0.5s;
-    transform: translateX(-3.8vw);
-    z-index: 1;
+    transform: translateX(-76%);
 }
 #mcleducation.mclist.active {
-    transition: 0.5s;
-    transform: translateX(-3.9vw);
-    z-index: 1;
+    transform: translateX(-73%);
 }
 #mclexperience.mclist.active {
-    transition: 0.5s;
-    transform: translateX(-4.15vw);
-    z-index: 1;
+    transform: translateX(-68%);
 }
 #mclskills.mclist.active {
-    transition: 0.5s;
-    transform: translateX(-2.7vw);
-    z-index: 1;
+   transform: translateX(-150%);
 }
 #mclcontact.mclist.active {
-    transition: 0.5s;
-    transform: translateX(-3.5vw);
-    z-index: 1;
+    transform: translateX(-91%);
 }
 
 .mclist {
     margin-bottom: 2vh;
     font-size: 2vh;
-}
-
-#mclaboutme.mclist {
     margin-top: 2vh;
+    width: max-content;
 }
 
 .mclisttext {
@@ -201,10 +193,8 @@ img.portrait-picture {
 
 .mclindicator {
     position: absolute;
-    top: 32.5%;
-    right: 51%;
-    width: 8vw;
-    height: 4vh;
+    width: 15vh;
+    height: 5vh;
     background: rgb(255, 255, 255);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 15px 30px -24px inset, rgba(0, 0, 0, 0.3) 0px 9px 18px -36px inset;
     border-radius: 0;
@@ -261,35 +251,35 @@ img.portrait-picture {
 }
 
 .mclist:nth-child(1).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * 0.005));
+    transform: translateY(calc(var(--topmclindicator) * -0.0326)) translateX(-50%);
 }
 
 .mclist:nth-child(2).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * 0.375));
+    transform: translateY(calc(var(--topmclindicator) * -0.0162)) translateX(-50%);
 }
 
 .mclist:nth-child(3).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * 0.745));
+    transform: translateY(calc(var(--topmclindicator) * 0)) translateX(-50%);
 }
 
 .mclist:nth-child(4).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * 1.11));
+    transform: translateY(calc(var(--topmclindicator) * 0.0162)) translateX(-50%);
 }
 
 .mclist:nth-child(5).active ~ .mclindicator {
-    transform: translateY(calc(var(--topmclindicator) * 1.485));
+    transform: translateY(calc(var(--topmclindicator) * 0.0326)) translateX(-50%);
 }
 /*---------------------------Menubar End---------------------------*/
 /*----------Head Title Start----------*/
 .title-name {
     display: block;
-    flex-direction: column;
-    font-size: 2vh;
     position: absolute;
+    font-size: 2vh;
+    width: 50vw;
     z-index: 2;
-    bottom: 70vh;
-    left: 54vw;
-    transform: translateX(-16vw);
+    height: 100%;
+    margin-left: 37.5%;
+    margin-top: 18vh;
 }
 
 .f-l-name {
@@ -466,3 +456,51 @@ img.portrait-picture {
     opacity: .7;
 }
 /*---------------------------Socials Buttons End---------------------------*/
+
+@media screen and (min-width: 1024px) and (max-width: 1450px) {
+    .pic-n-menu {
+        transform: translateX(10vw);
+        transition: 0.3s ease-in-out;
+    }
+    .job-description {
+        font-size: 1.5vh;
+    }
+    .title-name {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .menubar {
+        visibility: collapse;
+    }
+    .contents {
+        margin-left: 0;
+        z-index: 0;
+    }
+    .pic-n-menu {
+        position: absolute;
+        top: 17%;
+    }
+    .job-description {
+        font-size: 1.5vh;
+    }
+    .lightModeDark {
+        top: 8vh;
+        left: 9vw;
+        position: absolute;
+    }
+    .socialsicon {
+        left: 3.4vw;
+        width: 0;
+        line-height: 0;
+    }
+    .title-name {
+        margin-top: 21.5vh;
+        position: absolute;
+    }
+    * {
+        font-size: 1.5vh;
+    }
+
+}
