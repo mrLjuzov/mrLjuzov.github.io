@@ -470,7 +470,7 @@ img.portrait-picture {
     }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 480px) and (max-width: 1023px) {
     .menubar {
         visibility: collapse;
     }
@@ -481,6 +481,41 @@ img.portrait-picture {
     .pic-n-menu {
         position: absolute;
         top: 17%;
+    }
+    .job-description {
+        font-size: 1.5vh;
+    }
+    .lightModeDark {
+        top: 8vh;
+        left: 9vw;
+        position: absolute;
+    }
+    .socialsicon {
+        left: 3.4vw;
+        width: 0;
+        line-height: 0;
+    }
+    .title-name {
+        margin-top: 21.5vh;
+        position: absolute;
+    }
+    * {
+        font-size: 1.5vh;
+    }
+
+}
+
+@media screen and (max-width: 479px){
+    .menubar {
+        visibility: collapse;
+    }
+    .contents {
+        margin-left: 0;
+        z-index: 0;
+    }
+    .pic-n-menu {
+        position: absolute;
+        top: 21%;
     }
     .job-description {
         font-size: 1.5vh;
