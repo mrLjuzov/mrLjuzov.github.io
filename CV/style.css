@@ -304,7 +304,7 @@ img.portrait-picture {
     border-top-left-radius: 2vh;
     flex-direction: column;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     margin-left: 35vw;
     margin-top: 25vh;
     padding: 5vh
@@ -332,7 +332,9 @@ img.portrait-picture {
 .skills, 
 .languagestitle, 
 .contactcity, 
-.theskills {
+.theskills,
+.personalprojectstitle,
+.hobbiestitle {
     margin-top: 2vh;
 }
 
@@ -374,10 +376,10 @@ img.portrait-picture {
 }
 
 .theskillsul {
-    list-style: none;
+    /* list-style: none; */
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    /* align-items: flex-end; */
     margin-bottom: 1vh;   
 }
 
