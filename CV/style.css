@@ -276,8 +276,8 @@ img.portrait-picture {
     position: absolute;
     font-size: 2vh;
     width: 50vw;
-    z-index: 2;
-    height: 100%;
+    z-index: 3;
+    height: 15%;
     margin-left: 37.5%;
     margin-top: 18vh;
 }
