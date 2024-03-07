@@ -484,6 +484,9 @@ img.portrait-picture {
         position: absolute;
         top: 17%;
     }
+    .portrait-picture {
+        max-height: 17vh;
+    }
     .job-description {
         font-size: 1.5vh;
     }
@@ -517,7 +520,10 @@ img.portrait-picture {
     }
     .pic-n-menu {
         position: absolute;
-        top: 21%;
+        top: 19%;
+    }
+    .portrait-picture {
+        max-height: 15vh;
     }
     .job-description {
         font-size: 1.5vh;
