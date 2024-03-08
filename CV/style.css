@@ -386,6 +386,89 @@ img.portrait-picture {
 .languagestitle {
     margin-bottom: 2vh;
 }
+
+.logo-pic {
+    position: absolute;
+    margin-top: 2vh;
+    width: 60vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo-container {
+    width: 16vw;
+    position: relative;
+    display: inline-block;
+}
+
+.logo-container img.ljuzovlogo, img.ljuzovnamelogo {
+    display: inline;
+}
+
+.logo-container img.ljuzovwhitelogo, img.ljuzovwhitenamelogo {
+    display: none;
+    opacity: 0.7;
+}
+
+.logo-container img.ljuzovlogo, img.ljuzovwhitelogo {
+    margin-left: 1.4vw;
+    width: auto;
+    height: 17vh;
+    transition: opacity 0.3s ease;
+}
+
+.logo-container img.ljuzovnamelogo, img.ljuzovwhitenamelogo {
+    margin-top: 7vh;
+    width: auto;
+    height: 3.5vh;
+    transition: opacity 0.3s ease;
+}
+
+.ljuzovnamelogo, .ljuzovwhitenamelogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.logo-container:hover {
+    animation: flash 3s infinite;
+    animation-play-state: running;
+    opacity: .7;
+}
+
+/* Define the default opacity and visibility for the logos */
+.logo-container .ljuzovlogo,
+.logo-container .ljuzovwhitelogo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.logo-container .ljuzovnamelogo,
+.logo-container .ljuzovwhitenamelogo {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Define the hover behavior */
+.logo-container:hover .ljuzovlogo,
+.logo-container:hover .ljuzovwhitelogo {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.logo-container:hover .ljuzovnamelogo,
+.logo-container:hover .ljuzovwhitenamelogo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contact-details {
+    position: relative;
+    z-index: 1;
+}
+
 /*----------Contents End----------*/
 /*---------------------------Socials Buttons Start---------------------------*/
 .socialswrapper {
@@ -437,10 +520,8 @@ img.portrait-picture {
 
 .socialsicon i {
     padding-top: 2vh;
-    padding-right: 0.2vw;
     height: 2vh;
     width: 2vw;
-
 }
 
 .socialname {
@@ -470,6 +551,47 @@ img.portrait-picture {
     .title-name {
         position: absolute;
     }
+
+    .socialsicon i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1.6vh;
+        height: auto;
+        width: auto;
+    }
+
+    .experience p {
+        font-size: 1.5vh;
+    }
+
+    .logo-pic {
+        width: 55vw;
+    }
+
+    .logo-container {
+        width: 13vw;
+    }
+
+    img.ljuzovlogo {
+        height: 17vh !important;
+        margin-left: 2vw;
+    }
+
+    img.ljuzovnamelogo {
+        margin-top: 6.8vh !important;
+        height: 3.5vh !important;
+    }
+
+    img.ljuzovwhitelogo {
+        height: 17vh !important;
+        margin-left: 2vw;
+    }
+
+    img.ljuzovwhitenamelogo {
+        margin-top: 6.8vh !important;
+        height: 3.5vh !important;
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1023px) {
@@ -495,17 +617,53 @@ img.portrait-picture {
         left: 9vw;
         position: absolute;
     }
-    .socialsicon {
-        left: 3.4vw;
-        width: 0;
-        line-height: 0;
-    }
     .title-name {
         margin-top: 21.5vh;
         position: absolute;
     }
     * {
         font-size: 1.5vh;
+    }
+
+    .socialsicon i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1.6vh;
+        height: auto;
+        width: auto;
+    }
+
+    .experience p {
+        font-size: 1.5vh;
+    }
+
+    .logo-pic {
+        width: 85vw;
+    }
+
+    .logo-container {
+        width: 18vw;
+    }
+
+    img.ljuzovlogo {
+        height: 17vh !important;
+        margin-left: 2.7vw;
+    }
+
+    img.ljuzovnamelogo {
+        margin-top: 6.8vh !important;
+        height: 3.5vh !important;
+    }
+
+    img.ljuzovwhitelogo {
+        height: 17vh !important;
+        margin-left: 2.7vw;
+    }
+
+    img.ljuzovwhitenamelogo {
+        margin-top: 6.8vh !important;
+        height: 3.5vh !important;
     }
 
 }
@@ -533,17 +691,50 @@ img.portrait-picture {
         left: 9vw;
         position: absolute;
     }
-    .socialsicon {
-        left: 3.4vw;
-        width: 0;
-        line-height: 0;
-    }
     .title-name {
         margin-top: 21.5vh;
         position: absolute;
     }
     * {
         font-size: 1.5vh;
+    }
+    .socialsicon i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1.7vh;
+        height: auto;
+        width: auto;
+    }
+
+    .experience p {
+        font-size: 1.5vh;
+    }
+
+    .logo-pic {
+        width: 80vw;
+    }
+
+    .logo-container {
+        width: 12vw;
+    }
+
+    img.ljuzovlogo {
+        height: 7vh !important;
+    }
+
+    img.ljuzovnamelogo {
+        margin-top: 2.5vh !important;
+        height: 1.5vh !important;
+    }
+
+    img.ljuzovwhitelogo {
+        height: 7vh !important;
+    }
+
+    img.ljuzovwhitenamelogo {
+        margin-top: 2.5vh !important;
+        height: 1.5vh !important;
     }
 
 }

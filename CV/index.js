@@ -11,6 +11,8 @@ const nameFLElement = document.querySelector(".f-l-name");
 const jobDescriptionElement = document.querySelector(".job-description");
 const mclist = document.querySelectorAll('.mclist');
 const mclIndicatorElement = document.querySelector(".mclindicator");
+const logoDefaultElement = document.querySelectorAll("img.ljuzovlogo, img.ljuzovnamelogo");
+const logoWhiteElement = document.querySelectorAll("img.ljuzovwhitelogo, img.ljuzovwhitenamelogo");
 
 uiBtnDarkMode.addEventListener("click", switchToDarkMode);
 uiBtnLightMode.addEventListener("click", switchToLightMode);
@@ -58,6 +60,14 @@ function switchTheme(theme) {
     mclIndicatorElement.style.boxShadow = theme.indicatorBoxShadow;
     mclIndicatorElement.style.border = theme.indicatorBorder;
     modeLDlement.style.color = theme.modeLDColor;
+    // Handle logo display based on theme
+    if (theme === darkTheme) {
+        logoWhiteElement.forEach(img => img.style.display = 'inline');
+        logoDefaultElement.forEach(img => img.style.display = 'none');
+    } else if (theme === lightTheme) {
+        logoWhiteElement.forEach(img => img.style.display = 'none');
+        logoDefaultElement.forEach(img => img.style.display = 'inline');
+    }
 }
 
 // For all Text Color on Dark theme
@@ -91,7 +101,7 @@ const darkTheme = {
     topSideBackground: 'rgba(4, 13, 18, .7)', //Modify only this if you want
     ...textColorDark,
     ...backgroundColorDark,
-    ...backgroundContentsColorDark
+    ...backgroundContentsColorDark,
 };
 
 // For all Text Color on Light theme
