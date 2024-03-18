@@ -4,7 +4,6 @@ const topSideElement = document.querySelector(".topSide");
 const portraitShadowElement = document.querySelector("img.portrait-picture");
 const contentsElement = document.querySelector(".contents");
 const menuContentsElements = document.querySelector(".menucontents");
-const hobbiesContentsElements = document.querySelectorAll(".hobbiescontent-eng, .hobbiescontent-mkd")
 const mclisttextElement = document.querySelectorAll(".mclisttext-eng, .mclisttext-mkd");
 const backgroundElement = document.querySelector(".background");
 const modeLDlement = document.querySelector(".lightModeDark");
@@ -41,10 +40,12 @@ let lastActiveId = null; // Variable to store the ID of the last active element
 
 // The Language Switch
 function translationsLangSwitch(translationsLang) {
-    var elementsEng = document.querySelectorAll('[class*="-eng"]:not(.mclisttext-eng):not(.hobbiescontent-eng)');
-    var elementsMkd = document.querySelectorAll('[class*="-mkd"]:not(.mclisttext-mkd):not(.hobbiescontent-mkd)');
+    var elementsEng = document.querySelectorAll('[class*="-eng"]:not(.mclisttext-eng)');
+    var elementsMkd = document.querySelectorAll('[class*="-mkd"]:not(.mclisttext-mkd)');
     var mclisttextEng = document.querySelectorAll('.mclisttext-eng');
     var mclisttextMkd = document.querySelectorAll('.mclisttext-mkd');
+    var hobbiescontentsEng = document.querySelectorAll('.hobbiescontent-eng')
+    var hobbiescontentsMkd = document.querySelectorAll('.hobbiescontent-mkd')
 
     // Hide elements with '-eng' class and show elements with '-mkd' class
     if (translationsLang === '-eng') {
@@ -60,6 +61,13 @@ function translationsLangSwitch(translationsLang) {
         mclisttextMkd.forEach(function(mcltmkd) {
             mcltmkd.style.display = 'contents';
         });
+        hobbiescontentsEng.forEach(function(hobce) {
+            hobce.style.display = 'none';
+        });
+        hobbiescontentsMkd.forEach(function(hobce) {
+            hobce.style.display = 'list-item';
+        });
+
         // Activate mclist-mkd if last active element was mclist-eng
         if (lastActiveId && lastActiveId.endsWith('-eng')) {
             const mclistMkd = document.getElementById(lastActiveId.replace('-eng', '-mkd'));
@@ -82,6 +90,13 @@ function translationsLangSwitch(translationsLang) {
         mclisttextEng.forEach(function(mclten) {
             mclten.style.display = 'contents';
         });
+        hobbiescontentsMkd.forEach(function(hobce) {
+            hobce.style.display = 'none';
+        });
+        hobbiescontentsEng.forEach(function(hobce) {
+            hobce.style.display = 'list-item';
+        });
+
         // Activate mclist-eng if last active element was mclist-mkd
         if (lastActiveId && lastActiveId.endsWith('-mkd')) {
             const mclistEng = document.getElementById(lastActiveId.replace('-mkd', '-eng'));
