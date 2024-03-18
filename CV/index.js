@@ -4,13 +4,14 @@ const topSideElement = document.querySelector(".topSide");
 const portraitShadowElement = document.querySelector("img.portrait-picture");
 const contentsElement = document.querySelector(".contents");
 const menuContentsElements = document.querySelector(".menucontents");
-const mclisttextElement = document.querySelectorAll(".mclisttext");
+const hobbiesContentsElements = document.querySelectorAll(".hobbiescontent-eng, .hobbiescontent-mkd")
+const mclisttextElement = document.querySelectorAll(".mclisttext-eng, .mclisttext-mkd");
 const backgroundElement = document.querySelector(".background");
 const modeLDlement = document.querySelector(".lightModeDark");
-const nameFLElement = document.querySelector(".f-l-name");
-const jobDescriptionElement = document.querySelector(".job-description");
-const mclist = document.querySelectorAll('.mclist');
-const mclIndicatorElement = document.querySelector(".mclindicator");
+const nameFLElement = document.querySelectorAll(".f-l-name-eng, .f-l-name-mkd");
+const jobDescriptionElement = document.querySelectorAll(".job-description-eng, .job-description-mkd");
+const mclist = document.querySelectorAll('.mclist-eng, .mclist-mkd');
+const mclIndicatorElement = document.querySelectorAll(".mclindicator");
 const logoDefaultElement = document.querySelectorAll("img.ljuzovlogo, img.ljuzovnamelogo");
 const logoWhiteElement = document.querySelectorAll("img.ljuzovwhitelogo, img.ljuzovwhitenamelogo");
 
@@ -35,6 +36,79 @@ function switchToLightMode() {
     switchTheme(lightTheme);
 }
 
+//Language Switching and Menubar Contents below
+let lastActiveId = null; // Variable to store the ID of the last active element
+
+// The Language Switch
+function translationsLangSwitch(translationsLang) {
+    var elementsEng = document.querySelectorAll('[class*="-eng"]:not(.mclisttext-eng):not(.hobbiescontent-eng)');
+    var elementsMkd = document.querySelectorAll('[class*="-mkd"]:not(.mclisttext-mkd):not(.hobbiescontent-mkd)');
+    var mclisttextEng = document.querySelectorAll('.mclisttext-eng');
+    var mclisttextMkd = document.querySelectorAll('.mclisttext-mkd');
+
+    // Hide elements with '-eng' class and show elements with '-mkd' class
+    if (translationsLang === '-eng') {
+        elementsEng.forEach(function(el) {
+            el.style.display = 'none';
+        });
+        elementsMkd.forEach(function(el) {
+            el.style.display = 'flex';
+        });
+        mclisttextEng.forEach(function(mclten) {
+            mclten.style.display = 'none';
+        });
+        mclisttextMkd.forEach(function(mcltmkd) {
+            mcltmkd.style.display = 'contents';
+        });
+        // Activate mclist-mkd if last active element was mclist-eng
+        if (lastActiveId && lastActiveId.endsWith('-eng')) {
+            const mclistMkd = document.getElementById(lastActiveId.replace('-eng', '-mkd'));
+            if (mclistMkd) {
+                mclistMkd.classList.add('active');
+            }
+        }
+    } 
+    // Hide elements with '-mkd' class and show elements with '-eng' class
+    else if (translationsLang === '-mkd') {
+        elementsMkd.forEach(function(el) {
+            el.style.display = 'none';
+        });
+        elementsEng.forEach(function(el) {
+            el.style.display = 'flex';
+        });
+        mclisttextMkd.forEach(function(mcltmkd) {
+            mcltmkd.style.display = 'none';
+        });
+        mclisttextEng.forEach(function(mclten) {
+            mclten.style.display = 'contents';
+        });
+        // Activate mclist-eng if last active element was mclist-mkd
+        if (lastActiveId && lastActiveId.endsWith('-mkd')) {
+            const mclistEng = document.getElementById(lastActiveId.replace('-mkd', '-eng'));
+            if (mclistEng) {
+                mclistEng.classList.add('active');
+            }
+        }
+    }
+    
+}
+
+//Event listeners for language switch buttons
+document.getElementById('translationsbutton-eng').addEventListener('click', function() {
+    translationsLangSwitch('-eng');
+});
+document.getElementById('translationsbutton-mkd').addEventListener('click', function() {
+    translationsLangSwitch('-mkd');
+});
+
+//Event listener for each mclist item to set active state
+mclist.forEach(function(item) {
+    item.addEventListener('click', function() {
+        activeLink.call(this);
+        lastActiveId = this.id;
+    });
+});
+
 // The Active Section in the Menubar
 function activeLink() {
     mclist.forEach((item) => item.classList.remove('active'));
@@ -53,13 +127,22 @@ function switchTheme(theme) {
     contentsElement.style.color = theme.contentsColor;
     backgroundElement.style.background = theme.background;
     menuContentsElements.style.background = theme.menuContentsBackground;
-    mclisttextElement.forEach(element => element.style.color = theme.menuContentsTextColor);
-    nameFLElement.style.color = theme.nameColor;
-    jobDescriptionElement.style.color = theme.jobDescriptionColor;
-    mclIndicatorElement.style.background = theme.indicatorBackground;
-    mclIndicatorElement.style.boxShadow = theme.indicatorBoxShadow;
-    mclIndicatorElement.style.border = theme.indicatorBorder;
+    mclisttextElement.forEach(function(element) {
+        element.style.color = theme.menuContentsTextColor;
+    });
+    nameFLElement.forEach(function(fln) {
+        fln.style.color = theme.nameColor;
+    });
+    jobDescriptionElement.forEach(function(jd) {
+        jd.style.color = theme.jobDescriptionColor;
+    });
+    mclIndicatorElement.forEach(function(mclind) {
+        mclind.style.background = theme.indicatorBackground;
+        mclind.style.boxShadow = theme.indicatorBoxShadow;
+        mclind.style.border = theme.indicatorBorder;
+    });
     modeLDlement.style.color = theme.modeLDColor;
+
     // Handle logo display based on theme
     if (theme === darkTheme) {
         logoWhiteElement.forEach(img => img.style.display = 'inline');

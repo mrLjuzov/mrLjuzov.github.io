@@ -7,6 +7,7 @@
     <link rel="icon" href="portraitphotoicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,9 +23,19 @@
             <i class='bx bxs-sun bx-flashing-hover' alt="Light Mode"></i>
         </button>
     </div>
+    <div class="translationsLang">
+        <button id="translationsbutton-eng" class="translationsbutton-eng">
+            <span class="flag-icon flag-icon-gb" alt="English"></span>
+        </button>
+        <button id="translationsbutton-mkd" class="translationsbutton-mkd" style="display: none;">
+            <span class="flag-icon flag-icon-mk" alt="Macedonian"></span>
+        </button>
+    </div>
     <div class="title-name">
-        <h1 class="f-l-name">Jane Ljuzov</h1>
-        <h3 class="job-description">Computer Science graduate with a Masters degree</h3>
+        <h1 class="f-l-name-eng">Jane Ljuzov</h1>
+        <h1 class="f-l-name-mkd" style="display: none;">Јане Љузов</h1>
+        <h3 class="job-description-eng">Master of computer science – Legum Magister LL.M</h3>
+        <h3 class="job-description-mkd" style="display: none;">Магистер по информатика</h3>
     </div>
     <div class="pic-n-menu">
         <div class="portrait-picture">
@@ -32,29 +43,54 @@
         </div>
         <div class="menubar">
             <ul class="menucontents">
-                <li id="mclaboutme" class="mclist active">
+                <li id="mclaboutme-eng" class="mclist-eng active">
                     <a href="#">
-                        <span class="mclisttext">About Me</span>
+                        <span class="mclisttext-eng">About Me</span>
                     </a>
                 </li>
-                <li id="mcleducation" class="mclist">
+                <li id="mclaboutme-mkd" class="mclist-mkd active" style="display: none;">
+                    <a href="#">
+                        <span class="mclisttext-mkd">За мене</span>
+                    </a>
+                </li>
+                <li id="mcleducation-eng" class="mclist-eng">
                     <a href="#education">
-                        <span class="mclisttext">Education</span>
+                        <span class="mclisttext-eng">Education</span>
                     </a>
                 </li>
-                <li id="mclexperience" class="mclist">
+                <li id="mcleducation-mkd" class="mclist-mkd" style="display: none;">
+                    <a href="#education">
+                        <span class="mclisttext-mkd">Образование</span>
+                    </a>
+                </li>
+                <li id="mclexperience-eng" class="mclist-eng">
                     <a href="#experience">
-                        <span class="mclisttext">Experience</span>
+                        <span class="mclisttext-eng">Experience</span>
                     </a>
                 </li>
-                <li id="mclskills" class="mclist">
+                <li id="mclexperience-mkd" class="mclist-mkd" style="display: none;">
+                    <a href="#experience">
+                        <span class="mclisttext-mkd">Искуство</span>
+                    </a>
+                </li>
+                <li id="mclskills-eng" class="mclist-eng">
                     <a href="#skills">
-                        <span class="mclisttext">Skills</span>
+                        <span class="mclisttext-eng">Skills</span>
                     </a>
                 </li>
-                <li id="mclcontact" class="mclist">
+                <li id="mclskills-mkd" class="mclist-mkd" style="display: none;">
+                    <a href="#skills">
+                        <span class="mclisttext-mkd">Вештини</span>
+                    </a>
+                </li>
+                <li id="mclcontact-eng" class="mclist-eng">
                     <a href="#contact">
-                        <span class="mclisttext">Contact</span>
+                        <span class="mclisttext-eng">Contact</span>
+                    </a>
+                </li>
+                <li id="mclcontact-mkd" class="mclist-mkd" style="display: none;">
+                    <a href="#contact">
+                        <span class="mclisttext-mkd">Контакт</span>
                     </a>
                 </li>
                 <div class="mclindicator"></div>
@@ -63,39 +99,65 @@
     </div>
     <div class="contents">
         <section id="aboutme" class="aboutme">
-            <h1 class="aboutmetitle">About Me</h1>
-            <p class="aboutmecontents">Hello, I'm Jane Ljuzov, a Computer Science graduate from International Slavic University with a Master's degree. 
+            <h1 class="aboutmetitle-eng">About Me</h1>
+            <h1 class="aboutmetitle-mkd" style="display: none;">За мене</h1>
+            <p class="aboutmecontents-eng">Hello, I'm Jane Ljuzov, a Computer Science graduate with a Master's degree at International Slavic University. 
                 During my academic journey, I completed an internship at Joyson Safety Systems, where I gained invaluable IT experience. 
                 My aspiration is to contribute to a software, app, web, or game development company, upgrading my skills and gaining experience. 
                 Known for my quick learning ability and meticulous attention to detail, I'm often regarded as a perfectionist, 
                 ensuring high-quality results in all endeavors. 
                 I'm enthusiastic about embarking on a new chapter to further expand my experience and make meaningful contribution.
             </p>
-            <h3 class="hobbiestitle">Hobbies</h3>
-            <li class="hobbiescontent">Graphic Design</li>
-            <li class="hobbiescontent">Gaming</li>
+            <p class="aboutmecontents-mkd" style="display: none;">Здраво, јас сум Јане Љузов, магистер по информатика на Меѓународниот славјански универзитет.
+                Во текот на мојот академски пат, завршив практикантска позиција во компанијата Joyson Safety Systems, каде што се стеков со важно искуство во ИТ областа.
+                Мојата амбиција е да допринесувам во компании за развој на софтвер, апликации, веб или игри, да се надградувам и да стекнувам искуство.
+                Познат сум по мојата способност за брзо учење и претставеноста кон деталите, често ме сметаат за перфекционист, сакајќи високо-квалитетни резултати во сите области.
+                Ентузијастичен сум да се впуштам во нов дел од животот, да го проширувам моето искуство и да направам значаен придонес.
+            </p>
+            <h3 class="hobbiestitle-eng">Hobbies</h3>
+            <h3 class="hobbiestitle-mkd" style="display: none;">Хоби и интереси</h3>
+            <ul class="hobbiesul">
+                <li class="hobbiescontent-eng">Graphic Design</li>
+                <li class="hobbiescontent-eng">Gaming</li>
+                <li class="hobbiescontent-mkd" style="display: none;">Графички дизајн</li>
+                <li class="hobbiescontent-mkd" style="display: none;">Гејминг</li>
+            </ul>
         </section>
         <section id="education" class="education">
-            <h2 class="educationtitle">Education</h2>
-            <h3 class="universityname">International Slavic University</h3>
-            <p class="universitydegree">Bachelor of Computer Science, Software Technologies | GPA - 7.96</p>
-            <p class="universityyears">Oct/2018 - Sep/2021</p>
-            <p class="universitydegree">Master of Computer Science - Legum Magister LL.M, Software Technologies | GPA - 8.57</p>
-            <p class="universityyears">Oct/2021 - Mar/2024</p>
+            <h2 class="educationtitle-eng">Education</h2>
+            <h3 class="universityname-eng">International Slavic University</h3>
+            <p class="universitydegree-eng">Bachelor of Computer Science, Software Technologies | GPA - 7.96</p>
+            <p class="universityyears-eng">Oct/2018 - Sep/2021</p>
+            <p class="universitydegree-eng">Master of Computer Science - Legum Magister LL.M, Software Technologies | GPA - 8.57</p>
+            <p class="universityyears-eng">Oct/2021 - Mar/2024</p>
+
+            <h2 class="educationtitle-mkd" style="display: none;">Образование</h2>
+            <h3 class="universityname-mkd" style="display: none;">Меѓународен Славјански Универзитет</h3>
+            <p class="universitydegree-mkd" style="display: none;">Дипломиран инженер по информатика, Софтверски Технологии | Просек - 7.96</p>
+            <p class="universityyears-mkd" style="display: none;">Окт/2018 - Септ/2021</p>
+            <p class="universitydegree-mkd" style="display: none;">Магистер по информатика, Софтверски Технологии | Просек - 8.57</p>
+            <p class="universityyears-mkd" style="display: none;">Окт/2021 - Март/2024</p>
         </section>
         <section id="experience" class="experience">
-            <h2 class="experiencetitle">Experience</h2>
-            <h3 class="jobtitle">IT Intern | Joyson Safety Systems - Kicevo, Macedonia</h3>
-            <p class="jobyears">Oct/2023 - Nov/2023</p>
-            <h3 class="personalprojectstitle">Personal Projects</h3>
+            <h2 class="experiencetitle-eng">Experience</h2>
+            <h3 class="jobtitle-eng">IT Intern | Joyson Safety Systems - Kicevo, Macedonia</h3>
+            <p class="jobyears-eng">Oct/2023 - Nov/2023</p>
+
+            <h2 class="experiencetitle-mkd" style="display: none;">Искуство</h2>
+            <h3 class="jobtitle-mkd" style="display: none;">ИТ Практикант | Joyson Safety Systems - Кичево, Македонија</h3>
+            <p class="jobyears-mkd" style="display: none;">Окт/2023 - Ноем/2023</p>
+
+            <h3 class="personalprojectstitle-eng">Personal Projects</h3>
+            <h3 class="personalprojectstitle-mkd" style="display: none;">Персонални проекти</h3>
             <p class="personalprojects">JumpBot Dash, Unity 2D Game - https://github.com/mrLjuzov/JumpBotDash</p>
             <p class="personalprojects">Responsive Web CV - https://github.com/mrLjuzov/mrLjuzov.github.io</p>
         </section>
         <section id="skills" class="skills">
-            <h2 class="skillstitle">Skills</h2>
+            <h2 class="skillstitle-eng">Skills</h2>
+            <h2 class="skillstitle-mkd" style="display: none;">Вештини</h2>
             <div class="theskills">
-                <h3 class="skillssubtitle">Technical Skills</h3>
-                <ul class="theskillsul">
+                <h3 class="skillssubtitle-eng">Technical Skills</h3>
+                <ul class="theskillsul-eng">
                     <li>Python</li>
                     <li>C#</li>
                     <li>C++</li>
@@ -108,21 +170,53 @@
                     <li>mySQL</li>
                     <li>OOP, Data Stuctures and Algorithms</li>
                 </ul>
-                <h3 class="skillssubtitle">Soft Skills</h3>
-                <ul class="theskillsul">
+                <h3 class="skillssubtitle-eng">Soft Skills</h3>
+                <ul class="theskillsul-eng">
                     <li>Problem Solving</li>
                     <li>Fast Learning</li>
                     <li>Teamwork</li>
                     <li>Communication</li>
+                    <li>Creativity</li>
+                    <li>Resourcefulness</li>
                     <li>Adaptability</li>
                 </ul>
+
+                <h3 class="skillssubtitle-mkd" style="display: none;">Технички вештини</h3>
+                <ul class="theskillsul-mkd" style="display: none;">
+                    <li>Python</li>
+                    <li>C#</li>
+                    <li>C++</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Unity</li>
+                    <li>Illustrator</li>
+                    <li>Photoshop</li>
+                    <li>mySQL</li>
+                    <li>OOP, Data Stuctures and Algorithms</li>
+                </ul>
+                <h3 class="skillssubtitle-mkd" style="display: none;">Меки вештини</h3>
+                <ul class="theskillsul-mkd" style="display: none;">
+                    <li>Решавање проблеми</li>
+                    <li>Брзо учење</li>
+                    <li>Тимска работа</li>
+                    <li>Комуникативност</li>
+                    <li>Креативност</li>
+                    <li>Снаодливост</li>
+                    <li>Адаптабилност</li>
+                </ul>
             </div>
-            <h3 class="languagestitle">Languages</h3>
-            <p class="languages">Macedonian (Native/Bilingual Proficiency)</p>
-            <p class="languages">English (Full Professional Proficiency)</p>
+            <h3 class="languagestitle-eng">Languages</h3>
+            <p class="languages-eng">Macedonian (Native/Bilingual Proficiency)</p>
+            <p class="languages-eng">English (Full Professional Proficiency)</p>
+
+            <h3 class="languagestitle-mkd" style="display: none;">Јазици</h3>
+            <p class="languages-mkd" style="display: none;">Македонски (Мајчин јазик)</p>
+            <p class="languages-mkd" style="display: none;">Англиски (Високо познавање)</p>
         </section>
         <section id="contact" class="contact">
-            <h2 class="contactstitle">Contact</h2>
+            <h2 class="contactstitle-eng">Contact</h2>
+            <h2 class="contactstitle-mkd" style="display: none;">Контакт</h2>
             <div class="logo-pic">
                 <div class="logo-container">
                     <img src="ljuzovlogotransparent.png" alt="Ljuzov Logo" class="ljuzovlogo">
@@ -134,7 +228,8 @@
                 <div class="contact-details">
                     <div class="contactcity">
                         <i class='bx bx-home-alt bx-flashing-hover'></i>
-                        <p class ="cityname">Kicevo</p></p>
+                        <p class ="cityname-eng">Kicevo</p>
+                        <p class ="cityname-mkd" style="display: none;">Кичево</p>
                     </div>
                     <div class="contactphone">
                         <i class='bx bx-mobile-alt bx-flashing-hover'></i>
@@ -145,7 +240,8 @@
                         <p class="mymail">janeljuzov@gmail.com</p>
                     </div>
                 </div>
-            <h3 class="socialstitle">Socials</h3>
+            <h3 class="socialstitle-eng">Socials</h3>
+            <h3 class="socialstitle-mkd" style="display: none;">Социјални мрежи</h3>
             <div class="socialswrapper">
                 <div class="socialsbutton" onclick="openLink('https://www.facebook.com/jane.ljuzov')">
                     <div class="socialsicon">

@@ -97,6 +97,29 @@ body {
     display: flex !important;
 }
 /*---------------------------Light/Dark Mode Start---------------------------*/
+/*------------------------Translation Languages Start------------------------*/
+.translationsLang {
+    position: fixed;
+    z-index: 1;
+    top: 8vh;
+    left: 4vw;
+    transform: translate(-2vw, -5vh);
+}
+
+.translationsLang span {
+    font-size: 3vh;
+}
+
+.translationsbutton-eng, .translationsbutton-mkd {
+    border: none;
+    height: 3vh;
+}
+
+.translationsLang:hover {
+    box-shadow: 0px 2vh 2vh rgba(0, 0, 0, 0.1); /* Use vmin for box-shadow */
+    transition: all 0.3s ease-out;
+}
+/*---------Translation Languages End--------*/
 /*----------Picture and Menu Start----------*/
 .pic-n-menu {
     top: 12%;
@@ -119,7 +142,8 @@ img.portrait-picture {
 }
 /*----------Picture and Menu End----------*/
 /*---------------------------Menubar Start---------------------------*/
-.menubar {
+
+.menubar{
     min-width: min-content;
     max-width: 17vw;
     height: 27%;
@@ -128,7 +152,7 @@ img.portrait-picture {
 }
 
 .menucontents {
-    width: auto;
+    width: 9vw;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -141,35 +165,61 @@ img.portrait-picture {
     align-items: center;
 }
 
-.mclist.active {
+.mclist-eng.active, .mclist-mkd.active {
     transition: 0.5s;
     z-index: 1;
 }
 
-#mclaboutme.mclist.active {
+/*eng*/
+#mclaboutme-eng.mclist-eng.active {
     transform: translateX(-77%);
 }
-#mcleducation.mclist.active {
+#mcleducation-eng.mclist-eng.active {
     transform: translateX(-73%);
 }
-#mclexperience.mclist.active {
+#mclexperience-eng.mclist-eng.active {
     transform: translateX(-68%);
 }
-#mclskills.mclist.active {
+#mclskills-eng.mclist-eng.active {
    transform: translateX(-150%);
 }
-#mclcontact.mclist.active {
+#mclcontact-eng.mclist-eng.active {
     transform: translateX(-91.5%);
 }
+/*eng*/
+/*mkd*/
+#mclaboutme-mkd.mclist-mkd.active {
+    transform: translateX(-95%);
+}
+#mcleducation-mkd.mclist-mkd.active {
+    transform: translateX(-62%);
+}
+#mclexperience-mkd.mclist-mkd.active {
+    transform: translateX(-88%);
+}
+#mclskills-mkd.mclist-mkd.active {
+   transform: translateX(-89%);
+}
+#mclcontact-mkd.mclist-mkd.active {
+    transform: translateX(-102%);
+}
+/*mkd*/
 
-.mclist {
+.mclist-eng, .mclist-mkd {
     margin-bottom: 2vh;
     font-size: 2vh;
     margin-top: 2vh;
     width: max-content;
 }
 
-.mclisttext {
+.mclisttext-eng {
+    display: contents;
+    position: absolute;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .7);
+}
+
+.mclisttext-mkd {
     display: contents;
     position: absolute;
     font-weight: 500;
@@ -185,7 +235,7 @@ img.portrait-picture {
     }
   }
 
-.mclist:hover {
+.mclist-eng:hover, .mclist-mkd:hover {
     animation: flash 3s infinite;
     animation-play-state: running;
     opacity: .7;
@@ -206,18 +256,7 @@ img.portrait-picture {
     transition: 0.5s;
 }
 
-.mclindicator::before {
-    content: '';
-    top: -38%;
-    left: 45%;
-    width: 0.5vw;
-    height: 0.9vh;
-    background: rgb(255, 255, 255);
-    border-bottom-left-radius: 0.4vh;
-    box-shadow: -5px 0px 0px 0px rgb(255, 255, 255);
-}
-
-.mcldarkmode, .mclindicator::before {
+.mcldarkmode, .mclindicator::before{
     content: '';
     top: -38%;
     left: 45%;
@@ -226,17 +265,6 @@ img.portrait-picture {
     background: rgb(24, 61, 61);
     border-bottom-left-radius: 0.4vh;
     box-shadow: -5px 0px 0px 0px rgb(92, 131, 116);
-}
-
-.mclindicator::after {
-    content: '';
-    top: 111%;
-    left: 45%;
-    width: 0.5vw;
-    height: 0.9vh;
-    background: rgb(255, 255, 255);
-    border-top-left-radius: 0.4vh;
-    box-shadow: -5px 0px 0px 0px rgb(255, 255, 255);
 }
 
 .mcldarkmode, .mclindicator::after {
@@ -250,25 +278,46 @@ img.portrait-picture {
     box-shadow: -5px 0px 0px 0px rgb(92, 131, 116);
 }
 
-.mclist:nth-child(1).active ~ .mclindicator {
-    transform: translateY(calc(19.8vh * -0.705)) translateX(-50%);
+.mclist-eng:nth-child(1).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * -0.715)) translateX(-50%);
 }
 
-.mclist:nth-child(2).active ~ .mclindicator {
-    transform: translateY(calc(19.8vh * -0.350)) translateX(-50%);
+.mclist-mkd:nth-child(2).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * -0.715)) translateX(-50%);
 }
 
-.mclist:nth-child(3).active ~ .mclindicator {
+.mclist-eng:nth-child(3).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * -0.355)) translateX(-50%);
+}
+
+.mclist-mkd:nth-child(4).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * -0.355)) translateX(-50%);
+}
+
+.mclist-eng:nth-child(5).active ~ .mclindicator {
     transform: translateY(calc(19.8vh * 0)) translateX(-50%);
 }
 
-.mclist:nth-child(4).active ~ .mclindicator {
-    transform: translateY(calc(19.8vh * 0.350)) translateX(-50%);
+.mclist-mkd:nth-child(6).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * 0)) translateX(-50%);
 }
 
-.mclist:nth-child(5).active ~ .mclindicator {
-    transform: translateY(calc(19.8vh * 0.705)) translateX(-50%);
+.mclist-eng:nth-child(7).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * 0.36)) translateX(-50%);
 }
+
+.mclist-mkd:nth-child(8).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * 0.36)) translateX(-50%);
+}
+
+.mclist-eng:nth-child(9).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * 0.715)) translateX(-50%);
+}
+
+.mclist-mkd:nth-child(10).active ~ .mclindicator {
+    transform: translateY(calc(19.8vh * 0.715)) translateX(-50%);
+}
+
 /*---------------------------Menubar End---------------------------*/
 /*----------Head Title Start----------*/
 .title-name {
@@ -282,14 +331,14 @@ img.portrait-picture {
     margin-top: 18vh;
 }
 
-.f-l-name {
+.f-l-name-eng, .f-l-name-mkd {
     font-weight: 600;
     color: rgba(0, 0, 0, .7);
     margin-bottom: 2.5vh;
 }
 
-.job-description {
-    font-weight: 300;
+.job-description-eng, .job-description-mkd {
+    font-weight: 400;
     color: rgba(0, 0, 0, .7);
     margin-top: 1vh;
 }
@@ -317,28 +366,46 @@ img.portrait-picture {
     text-align: justify;
 }
 
-.aboutmetitle, 
-.educationtitle, 
-.experiencetitle, 
-.skillstitle, 
-.contactstitle {
+.aboutmetitle-eng, 
+.educationtitle-eng, 
+.experiencetitle-eng, 
+.skillstitle-eng, 
+.contactstitle-eng,
+.aboutmetitle-mkd, 
+.educationtitle-mkd, 
+.experiencetitle-mkd, 
+.skillstitle-mkd, 
+.contactstitle-mkd {
     display: flex;
     justify-content: center;
 }
 
-.aboutmecontents, 
-.universityname, 
-.jobtitle, 
+.aboutmecontents-eng, 
+.universityname-eng, 
+.jobtitle-eng, 
 .skills, 
-.languagestitle, 
-.contactcity, 
+.languagestitle-eng, 
+.contactcity-eng, 
 .theskills,
-.personalprojectstitle,
-.hobbiestitle {
+.personalprojectstitle-eng,
+.hobbiestitle-eng,
+.aboutmecontents-mkd, 
+.universityname-mkd, 
+.jobtitle-mkd, 
+.languagestitle-mkd, 
+.contactcity-mkd,
+.personalprojectstitle-mkd,
+.hobbiestitle-mkd {
     margin-top: 2vh;
 }
 
-.socialstitle {
+.jobyears-eng, 
+.jobyears-mkd, 
+.personalprojects {
+    font-size: 2vh;
+}
+
+.socialstitle-eng, .socialstitle-mkd {
     margin-top: 4vh;
 }
 
@@ -350,7 +417,8 @@ img.portrait-picture {
     align-items: center;
 }
 
-.cityname, 
+.cityname-eng, 
+.cityname-mkd,
 .phonenumber, 
 .mymail {
     padding-left: 0.4vh;
@@ -375,15 +443,15 @@ img.portrait-picture {
     margin-bottom: 4vh;
 }
 
-.theskillsul {
-    /* list-style: none; */
+.theskillsul-eng, .theskillsul-mkd, .hobbiesul {
+    list-style: disc !important;
     display: flex;
     flex-direction: column;
-    /* align-items: flex-end; */
-    margin-bottom: 1vh;   
+    margin-bottom: 1vh;
+    padding-left: 2vw;   
 }
 
-.languagestitle {
+.languagestitle-eng, .languagestitle-mkd {
     margin-bottom: 2vh;
 }
 
@@ -540,13 +608,14 @@ img.portrait-picture {
 }
 /*---------------------------Socials Buttons End---------------------------*/
 
-@media screen and (min-width: 1024px) and (max-width: 1450px) {
+@media screen and (min-width: 1025px) {
     .pic-n-menu {
         transform: translateX(10vw);
         transition: 0.3s ease-in-out;
     }
-    .job-description {
-        font-size: 1.5vh;
+    .job-description-eng, .job-description-mkd {
+        font-size: 2vh;
+        font-weight: 400;
     }
     .title-name {
         position: absolute;
@@ -562,7 +631,7 @@ img.portrait-picture {
     }
 
     .experience p {
-        font-size: 1.5vh;
+        font-size: 2vh;
     }
 
     .logo-pic {
@@ -570,31 +639,31 @@ img.portrait-picture {
     }
 
     .logo-container {
-        width: 13vw;
+        width: 10vw;
     }
 
     img.ljuzovlogo {
-        height: 17vh !important;
+        height: 15vh !important;
         margin-left: 2vw;
     }
 
     img.ljuzovnamelogo {
         margin-top: 6.8vh !important;
-        height: 3.5vh !important;
+        height: 3vh !important;
     }
 
     img.ljuzovwhitelogo {
-        height: 17vh !important;
+        height: 15vh !important;
         margin-left: 2vw;
     }
 
     img.ljuzovwhitenamelogo {
         margin-top: 6.8vh !important;
-        height: 3.5vh !important;
+        height: 3vh !important;
     }
 }
 
-@media screen and (min-width: 480px) and (max-width: 1023px) {
+@media screen and (min-width: 480px) and (max-width: 1024px) {
     .menubar {
         visibility: collapse;
     }
@@ -609,13 +678,19 @@ img.portrait-picture {
     .portrait-picture {
         max-height: 17vh;
     }
-    .job-description {
+    .job-description-eng, .job-description-mkd {
         font-size: 1.5vh;
     }
     .lightModeDark {
         top: 8vh;
         left: 9vw;
         position: absolute;
+    }
+    .translationsLang {
+        top: 8.5vh;
+        left: 91vw;
+        position: absolute;
+        justify-content: end;
     }
     .title-name {
         margin-top: 21.5vh;
@@ -643,27 +718,29 @@ img.portrait-picture {
     }
 
     .logo-container {
-        width: 18vw;
+        width: 25vw;
     }
 
     img.ljuzovlogo {
-        height: 17vh !important;
+        height: 10vh !important;
         margin-left: 2.7vw;
     }
 
     img.ljuzovnamelogo {
-        margin-top: 6.8vh !important;
-        height: 3.5vh !important;
+        margin-top: 4vh !important;
+        height: 2vh !important;
+        left: -1vw
     }
 
     img.ljuzovwhitelogo {
-        height: 17vh !important;
+        height: 10vh !important;
         margin-left: 2.7vw;
     }
 
     img.ljuzovwhitenamelogo {
-        margin-top: 6.8vh !important;
-        height: 3.5vh !important;
+        margin-top: 4vh !important;
+        height: 2vh !important;
+        left: -1vw
     }
 
 }
@@ -683,13 +760,19 @@ img.portrait-picture {
     .portrait-picture {
         max-height: 15vh;
     }
-    .job-description {
+    .job-description-eng, .job-description-mkd {
         font-size: 1.5vh;
     }
     .lightModeDark {
         top: 8vh;
         left: 9vw;
         position: absolute;
+    }
+    .translationsLang {
+        top: 8.5vh;
+        left: 86vw;
+        position: absolute;
+        justify-content: end;
     }
     .title-name {
         margin-top: 21.5vh;
@@ -716,7 +799,7 @@ img.portrait-picture {
     }
 
     .logo-container {
-        width: 12vw;
+        width: 10vw;
     }
 
     img.ljuzovlogo {
