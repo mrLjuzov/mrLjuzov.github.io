@@ -13,6 +13,7 @@ const mclist = document.querySelectorAll('.mclist-eng, .mclist-mkd');
 const mclIndicatorElement = document.querySelectorAll(".mclindicator");
 const logoDefaultElement = document.querySelectorAll("img.ljuzovlogo, img.ljuzovnamelogo");
 const logoWhiteElement = document.querySelectorAll("img.ljuzovwhitelogo, img.ljuzovwhitenamelogo");
+const flagTextElement = document.querySelectorAll('.flag-text-eng, .flag-text-mkd')
 
 uiBtnDarkMode.addEventListener("click", switchToDarkMode);
 uiBtnLightMode.addEventListener("click", switchToLightMode);
@@ -44,8 +45,9 @@ function translationsLangSwitch(translationsLang) {
     var elementsMkd = document.querySelectorAll('[class*="-mkd"]:not(.mclisttext-mkd)');
     var mclisttextEng = document.querySelectorAll('.mclisttext-eng');
     var mclisttextMkd = document.querySelectorAll('.mclisttext-mkd');
-    var hobbiescontentsEng = document.querySelectorAll('.hobbiescontent-eng')
-    var hobbiescontentsMkd = document.querySelectorAll('.hobbiescontent-mkd')
+    var hobbiescontentsEng = document.querySelectorAll('.hobbiescontent-eng');
+    var hobbiescontentsMkd = document.querySelectorAll('.hobbiescontent-mkd');
+    var translationsBtnEng = document.querySelector(".translationsbutton-eng");
 
     // Hide elements with '-eng' class and show elements with '-mkd' class
     if (translationsLang === '-eng') {
@@ -67,6 +69,7 @@ function translationsLangSwitch(translationsLang) {
         hobbiescontentsMkd.forEach(function(hobce) {
             hobce.style.display = 'list-item';
         });
+        translationsBtnEng.style.display = 'none';
 
         // Activate mclist-mkd if last active element was mclist-eng
         if (lastActiveId && lastActiveId.endsWith('-eng')) {
@@ -96,6 +99,7 @@ function translationsLangSwitch(translationsLang) {
         hobbiescontentsEng.forEach(function(hobce) {
             hobce.style.display = 'list-item';
         });
+        translationsBtnEng.style.display = 'block';
 
         // Activate mclist-eng if last active element was mclist-mkd
         if (lastActiveId && lastActiveId.endsWith('-mkd')) {
@@ -157,6 +161,9 @@ function switchTheme(theme) {
         mclind.style.border = theme.indicatorBorder;
     });
     modeLDlement.style.color = theme.modeLDColor;
+    flagTextElement.forEach(function(fte) {
+        fte.style.color = theme.flagTextColor;
+    });
 
     // Handle logo display based on theme
     if (theme === darkTheme) {
@@ -175,7 +182,8 @@ const textColorDark = {
     menuContentsTextColor: commonTextColorDark,
     nameColor: commonTextColorDark,
     jobDescriptionColor: commonTextColorDark,
-    modeLDColor: commonTextColorDark
+    modeLDColor: commonTextColorDark,
+    flagTextColor: commonTextColorDark
 }
 
 // For all contents with the Background Color on Dark theme
@@ -209,7 +217,8 @@ const textColorLight = {
     menuContentsTextColor: commonTextColorLight,
     nameColor: commonTextColorLight,
     jobDescriptionColor: commonTextColorLight,
-    modeLDColor: commonTextColorLight
+    modeLDColor: commonTextColorLight,
+    flagTextColor: commonTextColorLight
 }
 
 // For all contents with the Background Color on Light theme

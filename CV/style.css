@@ -27,6 +27,7 @@ body {
     position: fixed;
     overflow-y: auto;
 }
+
 /*----------Background End----------*/
 /*----------Top Side Start----------*/
 .topSide {
@@ -37,6 +38,7 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     border-bottom-left-radius: 2vh;
 }
+
 /*----------Top Side End----------*/
 /*----------Light/Dark Mode Start----------*/
 .lightModeDark {
@@ -96,6 +98,7 @@ body {
 .switchModeActive {
     display: flex !important;
 }
+
 /*---------------------------Light/Dark Mode Start---------------------------*/
 /*------------------------Translation Languages Start------------------------*/
 .translationsLang {
@@ -111,14 +114,60 @@ body {
 }
 
 .translationsbutton-eng, .translationsbutton-mkd {
-    border: none;
     height: 3vh;
+    cursor: pointer;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.translationsbutton-eng {
+    position: relative;
+    overflow: hidden;
+    width: 4vh;
+    z-index: 2;
+}
+
+.translationsbutton-eng:hover .flag-text-eng,
+.translationsbutton-mkd:hover .flag-text-mkd {
+    visibility: visible;
+    left: 110%; 
+}
+
+.flag-text-eng {
+    visibility: hidden;
+    position: fixed;
+    width: inherit;
+    top: 0;
+    font-size: 2vh !important;
+    left: 0;
+    transition: left 0.3s ease;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.flag-text-mkd {
+    visibility: hidden;
+    position: absolute;
+    font-size: 2vh !important;
+    left: 0;
+    transition: left 0.3s ease;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.flag-icon-gb {
+    clip-path: polygon(100% 100%, 0 100%, 100% 0)
+}
+
+.flag-icon-us {
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    top: -108%;
+    z-index: 1;
 }
 
 .translationsLang:hover {
     box-shadow: 0px 2vh 2vh rgba(0, 0, 0, 0.1); /* Use vmin for box-shadow */
     transition: all 0.3s ease-out;
 }
+
 /*---------Translation Languages End--------*/
 /*----------Picture and Menu Start----------*/
 .pic-n-menu {
@@ -140,9 +189,9 @@ body {
 img.portrait-picture {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
+
 /*----------Picture and Menu End----------*/
 /*---------------------------Menubar Start---------------------------*/
-
 .menubar{
     min-width: min-content;
     max-width: 17vw;
@@ -342,6 +391,7 @@ img.portrait-picture {
     color: rgba(0, 0, 0, .7);
     margin-top: 1vh;
 }
+
 /*----------Head Title End----------*/
 /*----------Contents Start----------*/
 .contents {
@@ -606,8 +656,8 @@ img.portrait-picture {
     animation-play-state: running;
     opacity: .7;
 }
-/*---------------------------Socials Buttons End---------------------------*/
 
+/*---------------------------Socials Buttons End---------------------------*/
 @media screen and (min-width: 1025px) {
     .pic-n-menu {
         transform: translateX(10vw);
@@ -620,7 +670,6 @@ img.portrait-picture {
     .title-name {
         position: absolute;
     }
-
     .socialsicon i {
         display: flex;
         justify-content: center;
@@ -629,34 +678,27 @@ img.portrait-picture {
         height: auto;
         width: auto;
     }
-
     .experience p {
         font-size: 2vh;
     }
-
     .logo-pic {
         width: 55vw;
     }
-
     .logo-container {
         width: 10vw;
     }
-
     img.ljuzovlogo {
         height: 15vh !important;
         margin-left: 2vw;
     }
-
     img.ljuzovnamelogo {
         margin-top: 6.8vh !important;
         height: 3vh !important;
     }
-
     img.ljuzovwhitelogo {
         height: 15vh !important;
         margin-left: 2vw;
     }
-
     img.ljuzovwhitenamelogo {
         margin-top: 6.8vh !important;
         height: 3vh !important;
@@ -692,6 +734,20 @@ img.portrait-picture {
         position: absolute;
         justify-content: end;
     }
+    .flag-text-eng {
+        left: -75%;
+    }
+    .flag-text-mkd {
+        left: -215%;
+    }
+    .translationsbutton-eng:hover .flag-text-eng {
+    visibility: visible;
+    left: -195%; 
+    }
+    .translationsbutton-mkd:hover .flag-text-mkd {
+    visibility: visible;
+    left: -330%; 
+    }
     .title-name {
         margin-top: 21.5vh;
         position: absolute;
@@ -699,7 +755,6 @@ img.portrait-picture {
     * {
         font-size: 1.5vh;
     }
-
     .socialsicon i {
         display: flex;
         justify-content: center;
@@ -708,41 +763,33 @@ img.portrait-picture {
         height: auto;
         width: auto;
     }
-
     .experience p {
         font-size: 1.5vh;
     }
-
     .logo-pic {
         width: 85vw;
     }
-
     .logo-container {
         width: 25vw;
     }
-
     img.ljuzovlogo {
         height: 10vh !important;
         margin-left: 2.7vw;
     }
-
     img.ljuzovnamelogo {
         margin-top: 4vh !important;
         height: 2vh !important;
         left: -1vw
     }
-
     img.ljuzovwhitelogo {
         height: 10vh !important;
         margin-left: 2.7vw;
     }
-
     img.ljuzovwhitenamelogo {
         margin-top: 4vh !important;
         height: 2vh !important;
         left: -1vw
     }
-
 }
 
 @media screen and (max-width: 479px){
@@ -774,6 +821,20 @@ img.portrait-picture {
         position: absolute;
         justify-content: end;
     }
+    .flag-text-eng {
+        left: -75%;
+    }
+    .flag-text-mkd {
+        left: -215%;
+    }
+    .translationsbutton-eng:hover .flag-text-eng {
+    visibility: visible;
+    left: -195%; 
+    }
+    .translationsbutton-mkd:hover .flag-text-mkd {
+    visibility: visible;
+    left: -330%; 
+    }
     .title-name {
         margin-top: 21.5vh;
         position: absolute;
@@ -789,35 +850,27 @@ img.portrait-picture {
         height: auto;
         width: auto;
     }
-
     .experience p {
         font-size: 1.5vh;
     }
-
     .logo-pic {
         width: 73vw;
     }
-
     .logo-container {
         width: 10vw;
     }
-
     img.ljuzovlogo {
         height: 7vh !important;
     }
-
     img.ljuzovnamelogo {
         margin-top: 2.5vh !important;
         height: 1.5vh !important;
     }
-
     img.ljuzovwhitelogo {
         height: 7vh !important;
     }
-
     img.ljuzovwhitenamelogo {
         margin-top: 2.5vh !important;
         height: 1.5vh !important;
     }
-
 }
