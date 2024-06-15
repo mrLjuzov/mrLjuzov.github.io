@@ -1,0 +1,81 @@
+.load-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 0px 60px -12px inset, rgba(0, 0, 0, 0.15) 0px 0px 36px -18px inset;
+    z-index: 9999;
+}
+
+.skip-text {
+    position: absolute;
+    top: 60%;
+    font-weight: 300;
+}
+
+.space-word {
+    font-weight: 500;
+    background-color: #e01c5c;
+    border: outset #e01c5c; 
+    padding: 0 0.5vh;
+    border-radius: 1vh;
+    box-shadow: rgba(224, 28, 92, 0.15) 0px 4px 12px;
+}
+
+.load-screen.light-mode .space-word {
+    color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+}
+
+.load-screen.dark-mode {
+    background-color: #414042;
+    box-shadow: rgba(224, 28, 92, 0.15) 0px 0px 60px -12px inset, rgba(0, 0, 0, 0.15) 0px 0px 36px -18px inset;
+}
+
+.load-screen.light-mode {
+    background-color: whitesmoke;
+}
+
+.load-screen.dark-mode-text {
+    color: whitesmoke;
+}
+
+.load-screen.light-mode-text {
+    color: #414042;   
+}
+
+.load-screen img {
+  max-height: 20vh;
+  max-width: 20vw;
+  animation: logoAnimation 1s ease-in-out infinite alternate, boxShadowAnimation 2s ease-in-out infinite;
+  box-shadow: rgba(224, 28, 92, 0.15) 0px 4px 12px;
+}
+
+@keyframes logoAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes boxShadowAnimation {
+  0% {
+    box-shadow: rgba(224, 28, 92, 0.15) 0px 4px 12px;
+  }
+  50% {
+    box-shadow: rgba(224, 28, 92, 0.3) 0px 4px 20px;
+  }
+  100% {
+    box-shadow: rgba(224, 28, 92, 0.15) 0px 4px 12px;
+  }
+}
+
+  
+

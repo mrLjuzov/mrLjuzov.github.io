@@ -1,0 +1,171 @@
+.voting-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 0px 60px -12px inset, rgba(0, 0, 0, 0.15) 0px 0px 36px -18px inset;
+}
+
+.voting-screen #Logo {
+    position: fixed;
+    top: 7%;
+    height: 9vh;
+}
+
+.voting-screen.dark-mode {
+    background-color: #414042;
+    box-shadow: rgba(224, 28, 92, 0.15) 0px 0px 60px -12px inset, rgba(0, 0, 0, 0.15) 0px 0px 36px -18px inset;
+}
+
+.voting-screen.dark-mode-text {
+    color: whitesmoke;
+}
+  
+.voting-screen.light-mode {
+    background-color: whitesmoke;
+}
+
+.voting-screen.light-mode-text {
+    color: #414042;   
+}
+
+.voting-button-container {
+    position: absolute;
+}
+
+.left-vote-button, .right-vote-button {
+    margin: 5vh;
+    height: 30vh;
+    width: 15vw;
+    padding: 1vh 1vh;
+    font-size: 5vh;
+    cursor: pointer;
+    border: solid #e01c5c;
+    border-radius: 1vh;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+}
+
+.voting-screen.dark-mode .left-vote-button, 
+.voting-screen.dark-mode .right-vote-button {
+    box-shadow: rgba(224, 28, 92, 0.15) 0px 4px 12px;
+}
+
+.voting-screen.dark-mode .left-vote-button:hover, 
+.voting-screen.dark-mode .right-vote-button:hover {
+    border: solid whitesmoke;
+}
+
+.left-vote-button {
+    background-color: #e01c5c;
+    color: whitesmoke;
+}
+
+.left-vote-button:hover {
+    background-color: whitesmoke;
+    color: #e01c5c;
+}
+
+.right-vote-button {
+    background-color: #414042;
+    color: #e01c5c;
+}
+
+.voting-screen.light-mode .left-vote-button,
+.voting-screen.light-mode .right-vote-button {
+    border: none;
+}
+
+.right-vote-button:hover {
+    background-color: whitesmoke;
+    color: #e01c5c;
+}
+
+.back-button, .vs-start-over-button {
+    position: relative;
+    font-size: 2.5vh;
+    bottom: -33%;
+    height: 4.5vh;
+    width: auto;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+}
+
+.back-button {
+    color: whitesmoke;
+    background-color: #414042;
+    right: -18vh;
+}
+
+.voting-screen.dark-mode .back-button,
+.voting-screen.dark-mode .vs-start-over-button {
+    border: outset #e01c5c;
+    border-radius: 1vh;
+    box-shadow: rgba(224, 28, 92, 0.15) 0px 4px 12px;
+}
+
+.voting-screen.dark-mode .back-button:hover  {
+    border: outset whitesmoke;
+}
+
+.voting-screen.light-mode .back-button  {
+    border-radius: 1vh;
+}
+
+.back-button:hover {
+    background-color: whitesmoke;
+    color: #414042;
+}
+
+.vs-start-over-button {
+    color: whitesmoke;
+    background-color: #e01c5c;
+    left: -18vh;
+}
+
+.voting-screen.dark-mode .vs-start-over-button:hover  {
+    border: outset whitesmoke;
+}
+
+.voting-screen.light-mode .vs-start-over-button {
+    border-radius: 1vh;
+}
+
+.vs-start-over-button:hover {
+    background-color: whitesmoke;
+    color: #414042;
+}
+
+.vs-text {
+    position: absolute;
+    font-size: 3vh;
+}
+
+#info.vs-text  {
+    top: 23%;
+}
+
+#votes-left.vs-text {
+    font-size: 2.5vh;
+    bottom: 23%;
+}
+
+#votes-left.vs-text span#vote-counter {
+    color: #e01c5c;
+    padding: 0.5vh 1.5vh;
+    margin-left: 1vh;
+    border: outset #e01c5c;
+    border-radius: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+}
+
+.voting-screen.dark-mode #votes-left.vs-text span#vote-counter {
+    box-shadow: rgba(224, 28, 92, 0.15) 0px 4px 12px;
+}
