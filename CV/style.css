@@ -394,6 +394,14 @@ img.portrait-picture {
 
 /*----------Head Title End----------*/
 /*----------Contents Start----------*/
+.tsul-eng-title {
+    font-weight: 500;
+}
+
+.tsul-mkd-title {
+    font-weight: 600;
+}
+
 .contents {
     display: flex;
     width: -webkit-fill-available;
